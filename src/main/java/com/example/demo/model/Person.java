@@ -1,24 +1,43 @@
 package com.example.demo.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+//import javax.persistence.Entity;
 import javax.persistence.*;
+import java.io.Serializable;
+import java.lang.annotation.Inherited;
 import java.time.LocalDate;
 
-@Inheritance(strategy = InheritanceType.JOINED)
-@MappedSuperclass
 
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
+//@Entity
 @Table(name = "person")
 public class Person{
-    @Column(name = "p_id")
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long p_id;
-    @Column(name="p_type")
-    private  String p_type;
+
+
     @Column(name = "fname")
     private String fname;
+
     @Column(name = "lname")
     private String lname;
-    @Column(name="dob")
-    private LocalDate dateOfBirth;
+
     @Column(name="gender")
     private char gender;
+
+    @Column(name="dob")
+    private LocalDate dateOfBirth;
+
+    @Column(name = "p_type")
+    private String p_type;
 
     public String getP_type() {
         return p_type;
