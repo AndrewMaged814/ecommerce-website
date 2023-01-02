@@ -1,13 +1,13 @@
 package com.example.demo.model;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
+@MappedSuperclass
+
 @Table(name = "product")
-@Inheritance(strategy = InheritanceType.JOINED)
-//@MappedSuperclass
 public class Product {
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long prod_id;
     @Column(name = "a_id")
